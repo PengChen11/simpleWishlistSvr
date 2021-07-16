@@ -49,7 +49,7 @@ server.put("/destinations", (req, res) => {
   if (!target){
     res.send(`can NOT find record ${_id}`);
   } else {
-    destinations[_id] = {...req.body, _id};
+    destinations[_id] = {_id, ...req.body};
     res.send(`updated record id ${_id}`);
   }
 });
